@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Subscribed{% endblock %}
+
+{% block body %}
+{% for message in app.flashes('success') %}
+    <div class="flash-success bg-green-200 text-green-700">
+        {{ message }}
+    </div>
+    {% endfor %}
+    <div class="text-center font-bold text-3xl">
+        {{confirm_message}}
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter catégories{% endblock %}
+
+{% block body %}
+
+  {# {{form(form)}} #}
+  
+<div class="flex justify-center items-center flex-col">
+    <h1 class="mt-4 text-center font-fold text-3xl">Création d'une catégorie</h1>
+    <div class="my-5">
+        {{form_start(form)}}
+        <div class="my-5">
+          {{form_label(form.name)}}
+          {{form_widget(form.name)}}
+          <div class="bg-red-200 text-red-700">
+            {{form_errors(form.name)}}
+          </div>
+        </div>
+        <div class="my-5">
+           {{form_row(form.submit)}}
+        </div>
+    {{form_end(form)}}
+    </div>
+  </div>
+{% endblock %}

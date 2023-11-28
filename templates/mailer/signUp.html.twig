@@ -1,0 +1,26 @@
+
+{% apply inline_css %}
+    <style>
+        h1{
+            color: green;
+            margin:auto;
+        }
+        p{
+            color: #eee;
+            font-size: 20px;
+            text:center;
+        }
+  
+
+    </style>
+
+    <h1>Merci pour votre inscription ({{ email.to[0].address }})</h1>
+    <p>
+        <a href="#">Cliquez ici pour activer votre compte {{email.to[0].address}}</a>
+        (Ce lien est valable jusqu'à {{expiration_date|date('d/m/y') }})
+    </p>
+     <p>
+        <a href="{{url('newsletter_unsubscribed', {'id': user.id })}}">Cliquez ici pour désactiver votre compte {{email.to[0].address}}</a>
+    </p>
+    <img src="{{email.image('@images/cat_mail.jpg')}}" alt="">
+{% endapply %}

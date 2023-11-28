@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+{# {{form(newsletter_form)}} #}
+<div class='flex justify-center items-center flex-col'>
+  <h1 class="mt-4 text-center font-fold text-3xl">Newletter</h1>
+    <div class="my-5">
+        {{form_start(newsletter_form)}}
+        <div class="my-5">
+          {{form_label(newsletter_form.email)}}
+          {{form_widget(newsletter_form.email)}}
+          <div class="bg-red-200 text-red-700">
+            {{form_errors(newsletter_form.email)}}
+          </div>
+        </div>
+
+        <div class="my-5">
+          {{form_label(newsletter_form.subscribed)}}
+          {{form_widget(newsletter_form.subscribed)}}
+          <div class="bg-red-200 text-red-700">
+            {{form_errors(newsletter_form.subscribed)}}
+          </div>
+        </div>
+
+        <div class="my-5">
+           {{form_row(newsletter_form.Enregistrer)}}
+        </div>
+    {{form_end(newsletter_form)}}
+    </div>
+  </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vos articles{% endblock %}
+
+{% block body %}
+<h1 class="text-center text-3xl font-bold">Mes articles</h1>
+<h2>{{articles | length}}</h2>
+{% for article in articles %}
+    <p class="text-center">
+       <a href="{{ path('item', {id: article.id}) }}">{{article.title}}</a>
+    </p>
+    {% else %}
+    <p>Vous n'avez aucun articles!</p>
+  {% endfor %}
+{% endblock %}

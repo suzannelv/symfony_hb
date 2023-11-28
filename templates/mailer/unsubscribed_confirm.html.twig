@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Unsubscribed{% endblock %}
+
+{% block body %}
+    {% for message in app.flashes('message') %}
+    <div class="flash-success bg-green-200 text-green-700">
+        {{ message }}
+    </div>
+    {% endfor %}
+<h1>Vous avez réussi à désabonné!</h1>
+{% endblock %}
